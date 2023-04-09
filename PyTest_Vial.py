@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import pymssql
 import pytest
 from py.xml import html
