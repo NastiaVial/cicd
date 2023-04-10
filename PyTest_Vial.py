@@ -23,6 +23,7 @@ def test01_table_department_existence():
     assert len(rows) == 1
     print(f'Table Department exists in AdventureWorks2016 database')
 
+test01_table_department_existence()
 
 def test02_table_department_metadata():
     """
@@ -43,6 +44,7 @@ def test02_table_department_metadata():
     assert rows == department_metadata
     print(f'Column names and data types are according to the mapping document')
 
+test02_table_department_metadata()
 
 def test03_table_employee_not_empty():
     """
@@ -56,6 +58,7 @@ def test03_table_employee_not_empty():
     assert len(list(rows)) > 0
     print(f'Table Employee is not empty')
 
+test03_table_employee_not_empty()
 
 def test04_table_employee_uniqueness():
     """
@@ -70,6 +73,7 @@ def test04_table_employee_uniqueness():
     assert len(list(rows)) == 0
     print(f'No duplicates in table Employee')
 
+test04_table_employee_uniqueness()
 
 def test05_start_date_with_end_date():
     """
@@ -84,6 +88,7 @@ def test05_start_date_with_end_date():
     assert rows == []
     print(f'Start_date is earlier than end_date in EmployeeDepartmentHistory table')
 
+test05_start_date_with_end_date()
 
 def test06_validity_of_start_date():
     """
@@ -98,6 +103,7 @@ def test06_validity_of_start_date():
     assert rows == []
     print(f'Start_date is equal or earlier than current date in EmployeeDepartmentHistory table')
 
+test06_validity_of_start_date()
 
 def test07_finance_department():
     """
@@ -114,6 +120,7 @@ def test07_finance_department():
     assert int(rows) == 11
     print(f'Department Finance has 11 employees in EmployeeDepartmentHistory table')
 
+test07_finance_department()
 
 def test08_max_employee_rate():
     """
@@ -127,3 +134,5 @@ def test08_max_employee_rate():
     print(rows)
     assert rows <= 150
     print(f'Max rate is less than 150 in EmployeePayHistory table')
+
+test08_max_employee_rate()
