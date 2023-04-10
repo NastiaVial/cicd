@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import pymssql
 import pytest
-from py.xml import html
+#from py.xml import html
 
 try:
     conn = pymssql.connect(server='EPPLGDAW00A5', user='nastia', password='AMSTERdam19', database='AdventureWorks2016')
