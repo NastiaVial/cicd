@@ -5,7 +5,7 @@ pipeline {
 
       stage('runpy') {
         steps{ 
-	  sh "chmod a+x test/tests.py'
+	  sh 'chmod a+x test/tests.py'
         }
      }
 
