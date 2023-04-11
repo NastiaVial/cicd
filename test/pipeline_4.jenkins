@@ -4,7 +4,8 @@ pipeline {
    stages {
 
       stage('runpy') {
-        steps{      
+        steps{ 
+	  sh "chmod +x -R ${env.WORKSPACE}"     
           sh 'test/tests.py'
         }
         }
