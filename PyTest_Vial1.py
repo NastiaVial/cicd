@@ -135,4 +135,5 @@ def test08_max_employee_rate():
     assert rows <= 150
     print(f'Max rate is less than 150 in EmployeePayHistory table')
 
+    
 test08_max_employee_rate()
