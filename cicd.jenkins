@@ -24,7 +24,7 @@ pipeline {
                 sh 'git merge origin/main'
                 sh 'git branch'
                 sh 'git add .'
-                sh 'git commit -m "comment"'
+                sh 'git commit -m "all tests passed successfully"'
                 sh 'git remote set-url origin https://${PASSWORD_GIT}@github.com/NastiaVial/cicd.git'
                 sh 'git push --force https://${PASSWORD_GIT}@github.com/NastiaVial/cicd.git'
             }
