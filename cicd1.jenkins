@@ -24,7 +24,7 @@ pipeline {
                 sh 'git checkout -f main'
                 sh 'git merge origin/feature3'
                 sh 'git remote set-url origin https://${PASSWORD_GIT}@github.com/NastiaVial/cicd.git'
-                sh 'git push --force https://${PASSWORD_GIT}@github.com/NastiaVial/cicd.git'
+                sh 'git push origin'
             }
             
         }
