@@ -33,15 +33,5 @@ pipeline {
                 echo 'Well done'
             }
         }
-                sh 'git remote set-url origin https://${PASSWORD_GIT}@github.com/NastiaVial/cicd.git'
-                sh 'git push --force https://${PASSWORD_GIT}@github.com/NastiaVial/cicd.git'
-            }
-            
-        }
-        stage('Results') {
-            steps {
-                echo 'Well done'
-            }
-        }
     }
 }
