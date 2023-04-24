@@ -6,12 +6,12 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scmGit(branches: [[name: '*/feature2']], extensions: [], userRemoteConfigs: [[credentialsId: '80f759e4-1bc2-4e7d-8c9e-8c00d25f734b', url: 'https://github.com/NastiaVial/cicd.git']])
+                checkout scmGit(branches: [[name: '*/feature3']], extensions: [], userRemoteConfigs: [[credentialsId: '80f759e4-1bc2-4e7d-8c9e-8c00d25f734b', url: 'https://github.com/NastiaVial/cicd.git']])
             }
         }
         stage('Build and Test') {
             steps {
-                git branch: 'feature2', credentialsId: '80f759e4-1bc2-4e7d-8c9e-8c00d25f734b', url: 'https://github.com/NastiaVial/cicd.git'
+                git branch: 'feature3', credentialsId: '80f759e4-1bc2-4e7d-8c9e-8c00d25f734b', url: 'https://github.com/NastiaVial/cicd.git'
                 echo "Testing process"
                 sh 'pytest PyTest_Vial2.py  --junitxml results.xml .'
                 junit 'results.xml'
@@ -22,7 +22,7 @@ pipeline {
                 junit 'results.xml'
                 sh 'git config --global user.email "nastiavial@gmail.com"'
                 sh 'git config --global user.name "NastiaVial"'
-                git branch: 'feature2', credentialsId: '80f759e4-1bc2-4e7d-8c9e-8c00d25f734b', url: 'https://github.com/NastiaVial/cicd.git'
+                git branch: 'feature3', credentialsId: '80f759e4-1bc2-4e7d-8c9e-8c00d25f734b', url: 'https://github.com/NastiaVial/cicd.git'
                 sh 'git merge origin/main'
                 sh 'git branch'
                 sh 'git add .'
