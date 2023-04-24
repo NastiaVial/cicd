@@ -13,7 +13,7 @@ pipeline {
             steps {
                 git branch: 'feature2', credentialsId: '80f759e4-1bc2-4e7d-8c9e-8c00d25f734b', url: 'https://github.com/NastiaVial/cicd.git'
                 echo "Testing process"
-                sh 'pytest PyTest_Vial2.py  --junitxml results.xml .'
+                sh 'pytest PyTest_Vial1.py  --junitxml results.xml .'
                 junit 'results.xml'
             }
         }
