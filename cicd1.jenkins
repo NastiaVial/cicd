@@ -34,4 +34,9 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            archiveArtifacts artifacts: 'new_results.xml', onlyIfSuccessful: true
+        }
+    }
 }
