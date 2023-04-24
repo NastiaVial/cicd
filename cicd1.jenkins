@@ -11,13 +11,13 @@ pipeline {
             steps {
                 git branch: 'feature3', credentialsId: '80f759e4-1bc2-4e7d-8c9e-8c00d25f734b', url: 'https://github.com/NastiaVial/cicd.git'
                 echo "Testing process"
-                sh 'pytest PyTest_Vial2.py  --junitxml new_results.xml .'
-                junit 'new_results.xml'
+                sh 'pytest PyTest_Vial2.py  --junitxml results.xml .'
+                junit 'results.xml'
             }
         }
         stage('Deploy') {
             steps {
-                junit 'new_results.xml'
+                junit 'results.xml'
                 sh 'git config --global user.email "nastiavial@gmail.com"'
                 sh 'git config --global user.name "NastiaVial"'
                 git branch: 'feature3', credentialsId: '80f759e4-1bc2-4e7d-8c9e-8c00d25f734b', url: 'https://github.com/NastiaVial/cicd.git'
@@ -32,6 +32,11 @@ pipeline {
             steps {
                 echo 'Well done'
             }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'results.xml', onlyIfSuccessful: true
         }
     }
 }
